@@ -60,12 +60,12 @@ If you have done the pre-reqs you have the base framework, but all the files and
 
 1.  create a directory where your angular projects will live
   I like putting them in `\ng`
- 2.  change do that directory.  Now initiate the angular cli to generate a sample, we will call `sample-app` by invoking the following command
+ 2.  change to that directory.  Now initiate the angular cli to generate a sample. We will call it `sample-app` by invoking the following command
  ```
  ng new sample-app
  ```
  This will take some time as it installs all the dependencies.  
-3. when the command line comes back, change into the `\sample-app` directory and run the application.  so:
+ 3. when the command line comes back, change into the `\sample-app` directory and run the application.  so:
  ```
 cd sample-app
 ng serve -o
