@@ -51,6 +51,40 @@ your output should look something like:
 @angular/cli: 1.0.0
 node: 7.5.0
 os: win32 x64
+```
+
+Your versions and the components may vary slightly (for example on my other machine its angular/cli 1.0.1 and Node 6.10)
+
+# Making sure your configuration is correct and packages are installed
+If you have done the pre-reqs you have the base framework, but all the files and packages have not been downloaded.   Creating an example app with the CLI and serving it will install the major components.   To do a run through, do the following:
+
+1.  create a directory where your angular projects will live
+  I like putting them in `\ng`
+ 2.  change do that directory.  Now initiate the angular cli to generate a sample, we will call `sample-app` by invoking the following command
+ ```
+ ng new sample-app
+ ```
+ This will take some time as it installs all the dependencies.  
+3. when the command line comes back, change into the `\sample-app` directory and run the application.  so:
+ ```
+cd sample-app
+ng serve -o
+```
+   This command starts the web server that is part of the angular-cli to serve the current applicaton.   the `-o` option opens a browser to the app.  In your browser, you should see a screen that says *app-works* 
+   
+now if you do `ng --version`  it should look more like the following:
+
+
+```
+    _                      _                 ____ _     ___
+   / \   _ __   __ _ _   _| | __ _ _ __     / ___| |   |_ _|
+  / △ \ | '_ \ / _` | | | | |/ _` | '__|   | |   | |    | |
+ / ___ \| | | | (_| | |_| | | (_| | |      | |___| |___ | |
+/_/   \_\_| |_|\__, |\__,_|_|\__,_|_|       \____|_____|___|
+               |___/
+@angular/cli: 1.0.0
+node: 7.5.0
+os: win32 x64
 @angular/animations: 4.0.2
 @angular/common: 4.0.2
 @angular/compiler: 4.0.2
@@ -64,5 +98,3 @@ os: win32 x64
 @angular/router: 4.0.2
 @angular/cli: 1.0.0
 ```
-
-Your versions and the components may vary slightly.
