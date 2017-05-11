@@ -15,16 +15,14 @@ npm -v
 
 ```
 
+This should display the versions of the node engine (>6.1) and the package manager NPM (~4.1)
+
 ## Git, Github, and a github account
 You should have a working version of git with the ability to connect to github.com.  The easist way to do that, is to simply install the software at [desktop.github.com](https://desktop.github.com/).  After installation, you should be able to go to the command line and type:
 ```
 git --Version
 ```
 And have it display a version number (mine is 2.10.1.windows.1)
-
-
-
-This should display the versions of the node engine (>6.1) and the package manager NPM (~4.1)
 
 ## The angular cli.   
 The information on the angular cli can be found on [cli.angular.io](https://cli.angular.io).  To install after installing nodejs:
