@@ -1,4 +1,3 @@
-console.log('started workshop');
 const createMenu = require('simple-terminal-menu');
 const git = require('simple-git/promise')();
 
@@ -29,9 +28,10 @@ const getTagList = () => git.tags().then(({all: tags}) => tags);
 
 const getTagHash = tagName => git.raw(['show-ref', '-s', tagName]);
 
+const titlestring = 'Wildhacks Angular Workshop';
 const confirmSelectionMenu = name => {
   const subMenu = createMenu({x: 2, y: 2});
-  subMenu.writeLine('Wildhacks Angular Workshop');
+  subMenu.writeLine(titlestring);
   subMenu.writeSeparator();
   subMenu.writeLine(`Are you sure you want to checkout ${name}`);
   subMenu.writeLine(`and lose all your working changes?`);
@@ -53,7 +53,7 @@ const mainMenu = () => {
 
       const menu = createMenu({x: 2, y: 2});
 
-      menu.writeLine('Material Workshop', 'current');
+      menu.writeLine(titlestring, 'current');
       menu.writeSeparator();
       tags.forEach(({name, label, commit}) => {
         menu.addItem({
