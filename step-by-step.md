@@ -55,3 +55,33 @@ Bind to `artist` and `artists` to display their values using double curly braces
 <p>{{artist}}</p>
 <p>{{artists | json}}</p>
 ````
+## Step 2 to 3: ngFor
+We now want to display our artists in a bulleted format.  This introduces us to the structural template directive in angular, `ngFor`.
+
+open `app.component.html`.
+
+Delete the two paragraphs that output artist and artists.  replace them with an ngFor loop.  
+
+we are also going to add some basic styling.  Let's put our title in a `<div>` with wildcat colors.  Additionally, let's use some default bootstrap styles to add to our text info and button to size more nicely and adopt the bootstrap look.
+
+We will create the wildcat-colors style in `app.component.css`
+app.component.html should look like this:
+````
+<div class="wildcat-colors">
+ <h1>
+  {{title}}
+  </h1>
+</div>
+<div class="form-group">
+  <div class="col-md-4 col-xs-8 col-4">
+      <input type="text" class="form-control " placeholder="Artist Name" [(ngModel)]="artist">
+  </div>
+  <button class="btn" (click)="addArtist(artist)">Add Artist</button>
+</div>
+
+<ul>
+  <li *ngFor="let a of artists">{{a}}</li>
+</ul>
+
+and `app.component.css` should look like this:
+````
