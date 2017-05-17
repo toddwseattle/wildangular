@@ -3,6 +3,7 @@
     <tr>
       <th class="col-md-1 col-sm-1">Fav</th>
       <th class="col-md-6 col-sm-4" >Artist</th>
+      <th class="col-md-3 col-sm-2">PictureUrl</th>
     </tr>
     <tr *ngFor="let a of artistlist; let i=index">
       <td>
@@ -12,6 +13,7 @@
         </button>
       </td>
       <td >{{a.name}}</td>
+      <td>{{ais.getArtistPictureUrl(a)}}</td>
     </tr>
   </table>
 </div>

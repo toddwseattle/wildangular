@@ -170,6 +170,33 @@ We style this button again with wildcat colors.  css styles are local to the com
     color: #d8d6d6;
 }
 ````
+# 4 to 5 Add an Artist Info Service
+In this step we call out to the server to get some additional meta data for each artist so we can show a picture and potentially some other info.   A service provides a way to isolate logic that may be shared across components.  It's a special angular class, that can be 'injected' into components to provide new functions.
+1.  Use the cli to generate the component `ng g s artistInfo`
+by default two files are added in the `app` directory
+````
+  artist-info.service.spec.ts
+  artist-info.service.ts
+````
+The spec file is a test.  Note that unlike components, just a .ts file is generated (no html or css).  A test is generated (unlike a simple class).  
 
+The format of the service is also different from the class.  In particular, the Angular specific annotation @Injectable is added to the class definition.  This make it so it can be 'injected' into the contstructor of the view.   This more losely bind the UI components to the controller logic in the service; and promotes easier substitution for component reuse and testing.
 
+2.  the CLI does not automatically add the service to our modules and components.  First, declare it in the module file `app.module.ts`.  A synonym for services is `provider`.  Add the `artistInfo` service to the provider, and import the definition from the `.ts` file.  In `app.module.ts` `@Module` should look like this:
+````
+@NgModule({
+  declarations: [
+    AppComponent,
+    ArtistListComponent
+  ],
+  imports: [
+    BrowserModule,
+    FormsModule,
+    HttpModule
+  ],
+  providers: [ArtistInfoService],
+  bootstrap: [AppComponent]
+})
+````
+3.  Let's make our service actually do something.  To start, let's just have it return a string.  We're going to want to get a URL to an artist's picture.  Let's just return a fake url based on what's passed.
 
