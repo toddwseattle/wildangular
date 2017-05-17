@@ -85,3 +85,91 @@ app.component.html should look like this:
 
 and `app.component.css` should look like this:
 ````
+.wildcat-colors {
+    background-color: #4E2A84;
+    color: #d8d6d6;
+}
+# Step 3 to 4:  refactor and create a stylish artist list component with favorites
+
+## Create an Artist class with a name and favorite property
+We can use the angular cli to create a typescript class file to hold the Artist object.   Create it with a name string property and a favorite boolean property:
+
+1.  generate the class with the angular cli:
+`ng g class Artist`
+this will create artist.ts in the src\app directory.
+
+open the file and create this class:
+````
+ export class Artist {
+    public favorite = false;
+    constructor(public name: string) { }
+}
+````
+
+2. now create the new component, `app-artist-list` by executing the following command:
+`ng g component artistList`
+3. make sure the component activates appropriately.  put the tag `<app-artist-list></app-artist-list>` in `app.component.html`.  
+When this is served, you should see artist list works! in the browser.
+4. change app.component to create a list of artist objects with a favorite property.  change the method properties as below in app.component.ts:
+````
+artists: Artist[] = [];
+
+  addArtist(toadd: string) {
+      this.artists.push(new Artist(toadd));
+      this.artist = '';
+  }
+  ````
+5. change the reference to app-artist-list to pass an input property in `[]` toe the tag:
+  `<app-artist-list [artistlist]="artists"></app-artist-list>`
+6. add artist list as an input using the @Input decorator.  First, import it from the angular libary.  The first line will read:
+`import { Component, OnInit, Input } from '@angular/core';`
+
+also import the artist class:
+`import { Artist } from '../artist';`
+
+before the contructor of the class, add the @input decorator and declare `artistlist`:
+` @Input() artistlist: Artist[];`
+7. finally, in the artistList component (`artist-list.component.ts`) add a method to toggle the favorite flag in the object:
+````
+ toggleFavorite(favartist: Artist) {
+    favartist.favorite = !favartist.favorite;
+  }
+````
+8. now make the view match. Open `artist-list.component.html` We will put the artists and favorites in a `<div>` and `<table>`.  For the favorite column, we will add a button that shows an empty or filled star depending on the disposition of the favorite flag for that artist object.
+- create the basic table.  We use some simple bootstrap styles Note: we use `ngFor` again, this time in the table row (`<tr>`) element:
+````
+<div class="container">
+  <table class="table-striped table-bordered">
+    <tr>
+      <th class="col-md-1 col-sm-1">Fav</th>
+      <th class="col-md-6 col-sm-4" >Artist</th>
+    </tr>
+    <tr *ngFor="let a of artistlist; let i=index">
+      <td>
+       MyFav
+      </td>
+      <td >{{a.name}}</td>
+    </tr>
+  </table>
+</div>
+````
+This should render the artists when adeded using `ng serve`
+
+9. Now we need to toggle the favorite.  in the first table data element, where it now says 'MyFav'  we will put two buttons.  We show the star based on the favorite property.  To do this, we use the `*ngIf= ` structural directive.   When the expression is true, that element is shown (and evaluated if there are methods or properties access within).  A `<span>` is useful to do this.  When the button is clicked, it should call the method we created and toggle the favorite flag.  The button will look like this:
+````
+  <button (click)="toggleFavorite(a)" class="btn btn-xs artist-fav">
+          <span *ngIf="a.favorite" class="glyphicon glyphicon-star" aria-hidden="true"></span>
+          <span *ngIf="!a.favorite" class="glyphicon glyphicon-star-empty" aria-hidden="true"></span>
+  </button>
+````
+We style this button again with wildcat colors.  css styles are local to the component, so create the `artist-fav` style in `artist-list.component.css`:
+
+````
+.artist-fav {
+    background-color: #4E2A84;
+    color: #d8d6d6;
+}
+````
+
+
+

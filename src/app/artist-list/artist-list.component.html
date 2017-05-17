@@ -1,0 +1,17 @@
+<div *ngIf="artistlist?.length > 0" class="container">
+  <table class="table-striped table-bordered">
+    <tr>
+      <th class="col-md-1 col-sm-1">Fav</th>
+      <th class="col-md-6 col-sm-4" >Artist</th>
+    </tr>
+    <tr *ngFor="let a of artistlist; let i=index">
+      <td>
+        <button (click)="toggleFavorite(a)" class="btn btn-xs artist-fav">
+          <span *ngIf="a.favorite" class="glyphicon glyphicon-star" aria-hidden="true"></span>
+          <span *ngIf="!a.favorite" class="glyphicon glyphicon-star-empty" aria-hidden="true"></span>
+        </button>
+      </td>
+      <td >{{a.name}}</td>
+    </tr>
+  </table>
+</div>

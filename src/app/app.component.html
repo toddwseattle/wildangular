@@ -9,7 +9,4 @@
   </div>
   <button class="btn" (click)="addArtist(artist)">Add Artist</button>
 </div>
-
-<ul>
-  <li *ngFor="let a of artists">{{a}}</li>
-</ul>
+<app-artist-list [artistlist]="artists"></app-artist-list>
