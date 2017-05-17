@@ -1,3 +1,10 @@
-  <h1>
+ <h1>
   {{title}}
   </h1>
+<div>
+  <input type="text" placeholder="Artist Name" [(ngModel)]="artist">
+  <button class="btn" (click)="addArtist(artist)">Add Artist</button>
+</div>
+
+<p>{{artist}}</p>
+<p>{{artists | json}}</p>

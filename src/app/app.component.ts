@@ -6,5 +6,14 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'app works!';
+  title = 'Favorite Musicians';
+  artist = '';
+  artists: string[] = [];
+
+  addArtist(toadd: string) {
+      this.artists.push(toadd);
+      this.artist = '';
+  }
 }
+
+
