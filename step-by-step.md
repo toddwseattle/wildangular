@@ -1,3 +1,17 @@
+# Setting up the tutorial
+The tutorial requires node.js, npm, the angular cli, and git.   See the [Readme](readme.md) for more information on installing and verifying these components.
+
+# Switching Steps with npm run workshop
+You can switch to a completed step at anytime to see the answer by using the following npm command:
+````
+npm run workshop
+````
+
+this will present a list of the steps. Note: choosing a step wipes out any local work on the repository.
+Steps are implemented using git tags.
+
+p.s. thanks to @EladBezalel and @DevVersion for creating the [material tutorial](https://github.com/EladBezalel/material2-start/) where I stole the workshop code from.  After you complete this one, try that one!
+
 # Step 0 to 1
 Step one adds [boostrap](http://www.getbootstrap.com) to the project for better styling.  It does this by modifying the `.angular-cli.json` file and adding to the styles array.   
 ## 1a Install Boostrap
