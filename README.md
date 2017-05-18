@@ -1,5 +1,5 @@
 # Go Wild with Angular
-This is the Repository for the Wild Hacks Meetup on 5/17/2017.  For the moment it is just a placeholder.
+This is the Repository used at the Wild Hacks Meetup on 5/17/2017.  It includes a tutorial that covers the basic concepts of angular:  data binding, components, the CLI, and services.
 
 # pre-reqs
 In order for the tutorial to work, please install the following:
@@ -96,7 +96,11 @@ os: win32 x64
 @angular/router: 4.0.2
 @angular/cli: 1.0.0
 ```
-To work therough the tutorial, follow the steps in the [step by step](step-by-step.md].   You can switch to a completed step at anytime to see the answer by using the following npm command:
+# Going Step by Step
+To work therough the tutorial, follow the steps in the [step by step](step-by-step.md).  
+
+# Switching Steps in the Tutorial Workshop
+ You can switch to a completed step at anytime to see the answer by using the following npm command:
 ````
 npm run workshop
 ````
