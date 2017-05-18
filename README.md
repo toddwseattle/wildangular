@@ -96,6 +96,12 @@ os: win32 x64
 @angular/router: 4.0.2
 @angular/cli: 1.0.0
 ```
+To work therough the tutorial, follow the steps in the [step by step](step-by-step.md].   You can switch to a completed step at anytime to see the answer by using the following npm command:
+````
+npm run workshop
+````
+this will present a list of the steps.  Note: choosing a step wipes out any local work on the repository.
+
 # Angular CLI Readme for WildAng
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 1.0.0.
