@@ -1,6 +1,8 @@
 # Go Wild with Angular
 This is the Repository used at the Wild Hacks Meetup on 5/17/2017.  It includes a tutorial that covers the basic concepts of angular:  data binding, components, the CLI, and services.
 
+A few companion slides are in the presentation [Hack Angular Wildly](https://www.slideshare.net/toddwarrenseattle/hack-angular-wildly) on [slideshare](https://www.slideshare.net/toddwarrenseattle).
+
 # pre-reqs
 In order for the tutorial to work, please install the following:
 
